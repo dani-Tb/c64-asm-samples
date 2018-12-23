@@ -1,0 +1,28 @@
+!cpu 6502
+!to "hello1.prg",cbm
+* = $0801                               ; BASIC starts at #2049
+!byte $0d,$08,$dc,$07,$9e,$20,$34,$39   ; BASIC to load $c000
+!byte $31,$35,$32,$00,$00,$00           ; inserts BASIC line: 2012 SYS 49152
+* = $c000     				            ; start address for 6502 code
+
+    jsr $e544
+    
+    lda #$03
+    sta $d020
+    sta $d021
+    
+    ldx #$00
+    
+loop:    
+    lda text,x    
+    sta $0400+40*12,x
+    inx
+    cpx #40
+    bne loop
+
+wait:    
+    jmp wait    
+
+text:
+    !src " - - - - - - - Hello world - - - - - - - - "
+    
