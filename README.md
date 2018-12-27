@@ -7,6 +7,7 @@ TODO: improve repo organization, improve docs, use other tools and assemblers - 
 My cross development tools
 - [Relaunch64](http://www.popelganda.de/relaunch64.html)
 - [ACME CrossAssembler](https://github.com/martinpiper/ACME/)
+- [VICE Emulator](http://vice-emu.sourceforge.net/)
 
 ## Tutorials and reference
 
